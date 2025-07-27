@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <Wrapper>
         <div className='nav-center'>
-            <styledButton>StyledBtn</styledButton>
+            {/* <styledButton>StyledBtn</styledButton> */}
             <span className="logo">mixMaster</span>
             <div className="nav-links">
                 <NavLink to='/' className='nav-link'>

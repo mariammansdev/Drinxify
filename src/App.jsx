@@ -9,17 +9,18 @@ import {
   Cocktail,
   SinglePageError,
 } from './pages';
-
+import {Loader as LandingLoader} from './pages/Landing'
 
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <HomeLayout />,
-
+    errorElement: <Error />,
     children: [
       {
         index: true,
+        loader: LandingLoader,
         element: <Landing />,
 
       },

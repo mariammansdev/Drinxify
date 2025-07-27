@@ -1,9 +1,15 @@
+import { Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar";
+
 const HomeLayout = () => {
   return (
     <>
-      <section className='page'>
-        <div className='loading' />
-      </section>
+    <Navbar />
+    <section className='page'>
+        <Outlet />
+      {/* <div className='loading' /> */}
+    </section>
+     
     </>
   );
 };
