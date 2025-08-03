@@ -8,7 +8,7 @@ const Navbar = () => {
         <Wrapper>
             <div className='nav-center'>
                 {/* <styledButton>StyledBtn</styledButton> */}
-                <span className="logo">mixMaster</span>
+                <span className="logo">Drinxify</span>
                 <div className="nav-links">
                     <NavLink to='/' className='nav-link'>
                         Home
