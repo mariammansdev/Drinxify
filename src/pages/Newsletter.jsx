@@ -24,13 +24,14 @@ export const action = async ({ request }) => {
 }
 const Newsletter = () => {
   const navigation = useNavigation();
-    const isSubmitting = navigation.state === 'submitting';
+  const isSubmitting = navigation.state === 'submitting';
+
   return (
     <Form className="form" method="POST">
       <h2 style={{ marginBottom: '2rem', textAlign: 'center' }}>Subscribe to our Newsletter</h2>
       <div className="form-row">
         <label htmlFor="name" className="form-label">Name</label>
-        <input id="name" name="name" className="form-input" required/>
+        <input id="name" name="name" className="form-input" required />
       </div>
       <div className="form-row">
         <label htmlFor="lastName" className="form-label">Last Name</label>
@@ -38,7 +39,7 @@ const Newsletter = () => {
       </div>
       <div className="form-row">
         <label htmlFor="email" className="form-label">Email</label>
-        <input id="email" name="email" className="form-input" required/>
+        <input id="email" name="email" className="form-input" required />
       </div>
       <button type="submit" className="btn btn-block" style={{ marginTop: '0.5rem' }} disabled={isSubmitting}>{isSubmitting ? 'Submitting' : 'Submit'}</button>
 

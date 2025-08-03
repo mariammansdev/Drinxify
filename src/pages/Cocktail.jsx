@@ -1,17 +1,27 @@
 import axios from 'axios';
 import Wrapper from '../assets/wrappers/CocktailPage';
 import { useLoaderData, Link, Navigate } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
 
 const singleCocktailURL = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
 
-export const loader = async({params}) => {
+const cocktailCardQuery = (id) => {
+  return {
+    queryKey: ['cocktail', id],
+    queryFn: async () => {
+      const res = await axios.get(`${singleCocktailURL}${id}`);
+      return res.data.drinks[0];
+    },
+  }
+}
+export const loader = (queryClient) => async ({ params }) => {
   const id = params.id;
-  const res = await axios.get(`${singleCocktailURL}${id}`);
-  const drink = await res.data.drinks[0];
-  return {id, drink};
+  await queryClient.ensureQueryData(cocktailCardQuery(id));
+  return { id };
 }
 const Cocktail = () => {
-  const { drink } = useLoaderData();
+  // useQuery
+  const { data: drink } = useQuery(cocktailCardQuery(useLoaderData().id));
   if (!drink) {
     return <Navigate to='/' />;
   }
@@ -27,7 +37,7 @@ const Cocktail = () => {
         <h2>{strDrink}</h2>
       </header>
       <div className='drink'>
-        <img src={strDrinkThumb} alt={strDrink} className='img'/>
+        <img src={strDrinkThumb} alt={strDrink} className='img' />
         <div className='drink-info'>
           <p><span className='drink-data'>Name:</span> {strDrink}</p>
           <p><span className='drink-data'>Category:</span> {strCategory}</p>
