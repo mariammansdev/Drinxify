@@ -12,7 +12,7 @@ const Wrapper = styled.nav`
   }
   .logo {
     font-size: clamp(1.5rem, 3vw, 3rem);
-    color: var(--primary-500);
+    color: var(--primary-700);
     font-weight: 700;
     letter-spacing: 2px;
   }
@@ -27,12 +27,13 @@ const Wrapper = styled.nav`
     padding: 0.5rem 0.5rem 0.5rem 0;
     transition: var(--transition);
     letter-spacing: 2px;
+    font-weight: 500;
   }
   .nav-link:hover {
-    color: var(--primary-500);
+    color: var(--primary-700);
   }
   .active {
-    color: var(--primary-500);
+    color: var(--primary-700);
   }
   @media (min-width: 768px) {
     .nav-center {

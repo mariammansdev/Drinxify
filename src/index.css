@@ -158,7 +158,7 @@ ul {
 .btn {
   cursor: pointer;
   color: var(--white);
-  background: var(--primary-500);
+  background: var(--primary-700);
   border: transparent;
   border-radius: var(--borderRadius);
   letter-spacing: var(--letterSpacing);
@@ -169,16 +169,16 @@ ul {
   display: inline-block;
 }
 .btn:hover {
-  background: var(--primary-700);
+  background: var(--primary-900);
   box-shadow: var(--shadow-3);
 }
 .btn-hipster {
-  color: var(--primary-500);
+  color: var(--primary-700);
   background: var(--primary-200);
 }
 .btn-hipster:hover {
   color: var(--primary-200);
-  background: var(--primary-700);
+  background: var(--primary-900);
 }
 .btn-block {
   width: 100%;
