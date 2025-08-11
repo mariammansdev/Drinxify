@@ -11,7 +11,6 @@ const SearchForm = ({ searchQuery }) => {
     return (
         <Wrapper>
             <Form className='form'>
-                {/* <FaSearch className="search-icon" /> */}
                 <input name="search" className='form-input' placeholder='Search Cocktails...' defaultValue={searchQuery} autoComplete="off">
                 </input>
                 <button type="submit" className='btn' disabled={isSubmitting}>{isSubmitting ? <CgSearchLoading className="search-icon" style={{fontSize: '2rem'}}/> : <FaSearch className="search-icon" />}</button>

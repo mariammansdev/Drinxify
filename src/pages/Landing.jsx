@@ -1,7 +1,7 @@
 
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
-import { useLoaderData, useNavigation, useSearchParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import CocktailList from "../components/CocktailList";
 import SearchForm from "../components/SearchForm";
 
@@ -12,7 +12,7 @@ const searchCocktailQuery = (searchTerm) => {
   return {
     queryKey: ['cocktails', searchTerm],
     queryFn: async () => {
-      const res = await axios.get(`${cockTailUrl}${searchTerm}`);
+      const res = await axios.get(`${cockTailUrl}${searchTerm || 'a'}`);
       return res.data.drinks || [];
     },
   }
@@ -20,7 +20,7 @@ const searchCocktailQuery = (searchTerm) => {
 
 export const loader = (queryClient) => async ({ request }) => {
   const url = new URL(request.url);
-  const searchParams = url.searchParams.get('search') || 'a';
+  const searchParams = url.searchParams.get('search');
   const searchQuery = searchParams;
 
 
