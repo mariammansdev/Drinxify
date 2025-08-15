@@ -20,7 +20,6 @@ export const loader = (queryClient) => async ({ params }) => {
   return { id };
 }
 const Cocktail = () => {
-  // useQuery
   const { data: drink } = useQuery(cocktailCardQuery(useLoaderData().id));
   if (!drink) {
     return <Navigate to='/' />;
