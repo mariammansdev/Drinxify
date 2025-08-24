@@ -7,7 +7,7 @@ const SubMenu = ({ item, handleMenuClick, idx, displayedOptions }) => {
         if (!child.param) {
             return;
         }
-        navigate(`/?filter=${encodeURIComponent(child.param)}`);
+        navigate(`/?filter=${child.param}`);
     }
     return (
         <div className="types-link" key={item.label}>
