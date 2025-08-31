@@ -3,12 +3,9 @@ import logo from '/undraw_barista_wwfa700.svg'
 import { SlArrowRight } from "react-icons/sl";
 import  { useState } from 'react';
 import SubMenu from './subMenu';
-
 import { FaWineGlassAlt } from 'react-icons/fa';
 import { MdCategory } from 'react-icons/md';
-
 import { GiGlassCelebration } from 'react-icons/gi';
-
 import { GiOlive } from 'react-icons/gi';
 
 const SideBar = ({ handleOpenMenu, isOpen }) => {
