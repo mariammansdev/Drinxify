@@ -1,6 +1,6 @@
 import { Outlet, useNavigation } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import SideBar from "../components/sideBar";
+import SideBar from "../components/SideBar";
 import  { useState } from 'react';
 const HomeLayout = () => {
   const navigation = useNavigation();
