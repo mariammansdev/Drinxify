@@ -6,22 +6,29 @@ import CocktailList from "../components/CocktailList";
 import SearchForm from "../components/SearchForm";
 
 const cockTailUrl = 'https://www.thecocktaildb.com/api/json/v1/1/';
-const apileagueUrl = 'https://api.apileague.com/search-drinks';
+const apileagueUrl = '/api/search-drinks';
 const apiKey = import.meta.env.VITE_API_LEAGUE_SEARCH_DRINKS;
 
 const searchCocktailQuery = (query) => {
   return {
     queryKey: ['cocktails', query],
     queryFn: async () => {
-      const res = await axios.get(`${apileagueUrl}`, {
-        params: {
-          alcohol: false
-        },
-        headers: {
-          'x-api-key': apiKey
-        }
-      });
-      return res.data.drinks || [];
+      try {
+        console.log('API Key:', apiKey);
+        const res = await axios.get('/api/search-drinks', {
+          params: {
+            alcohol: false
+          },
+          headers: {
+            'x-api-key': apiKey
+          }
+        });
+        console.log('API Response:', res.data);
+        return res.data.drinks || [];
+      } catch (error) {
+        console.error('API Error:', error);
+        return [];
+      }
     },
   }
 }
