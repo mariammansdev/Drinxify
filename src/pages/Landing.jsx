@@ -15,7 +15,7 @@ const searchCocktailQuery = (query) => {
     queryFn: async () => {
       try {
         console.log('API Key:', apiKey);
-        const res = await axios.get('/api/search-drinks', {
+        const res = await axios.get(apileagueUrl, {
           params: {
             alcohol: false
           },

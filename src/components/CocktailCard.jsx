@@ -16,12 +16,12 @@ const CocktailCard = ({ image,
       <div className="footer">
         <h4>{name}</h4>
         <h5>{glass}</h5>
-        {price && <p>Price: ${price.toFixed(2)}</p>}
+        {/* {price && <p>Price: ${price.toFixed(2)}</p>}
         {flavors && flavors.length > 0 && (
           <p>Flavors: {flavors.join(", ")}</p>
         )}
-        {description && <p className="desc">{description}</p>}
-        <Link to={`/cocktail/${id}`} className="btn">
+        {description && <p className="desc">{description}</p>} */}
+        <Link to={`/cocktail/`} className="btn">
           Details
         </Link>
       </div>

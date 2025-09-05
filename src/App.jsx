@@ -11,7 +11,7 @@ import {
   SinglePageError,
 } from './pages';
 import { loader as LandingLoader } from './pages/Landing';
-import { loader as SingleCocktailLoader } from './pages/Cocktail';
+// import { loader as SingleCocktailLoader } from './pages/Cocktail';
 import { action as NewsletterAction } from './pages/Newsletter';
 
 const queryClient = new QueryClient({
@@ -36,10 +36,10 @@ const router = createBrowserRouter([
         errorElement: <SinglePageError />
       },
       {
-        path: 'cocktail/:id',
+        path: 'cocktail/',
         element: <Cocktail />,
         errorElement: <SinglePageError />,
-        loader: SingleCocktailLoader(queryClient),
+        // loader: SingleCocktailLoader(queryClient),
       },
       {
         path: 'newsletter',

@@ -1,5 +1,6 @@
 import Wrapper from "../assets/wrappers/CocktailList";
 import CocktailCard from "./CocktailCard";
+import { nanoid } from "nanoid"
 
 const CocktailList = ({drinks}) => {
     if (!drinks || drinks.length === 0) {
