@@ -28,8 +28,9 @@ const Wrapper = styled.div`
     color: var(--primary-700);
     letter-spacing: var(--letterSpacing);
   }
-  .ing {
+  .img {
     display: inline-block;
+    object-fit: cover;
     margin-right: 0.5rem;
   }
   @media (min-width: 992px) {

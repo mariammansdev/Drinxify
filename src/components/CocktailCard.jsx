@@ -7,7 +7,8 @@ const CocktailCard = ({ image,
   glass,
   price,
   description,
-  flavors, }) => {
+  flavors,
+  ingredients }) => {
   return (
     <Wrapper>
       <div className="img-container">
@@ -21,8 +22,16 @@ const CocktailCard = ({ image,
           <p>Flavors: {flavors.join(", ")}</p>
         )}
         {description && <p className="desc">{description}</p>} */}
-        <Link to={`/cocktail/`} className="btn">
-          Details
+        <Link to={`/cocktail/`} state={{drink : {image,
+              name,
+              id,
+              glass,
+              price,
+              description,
+              flavors,
+              ingredients }}} 
+          className="btn">
+            Details
         </Link>
       </div>
     </Wrapper>
